@@ -1,0 +1,64 @@
+README: Rugby Match Prediction System
+
+===================================================================================================================================================
+
+Description:
+This is a web-based application built with Flask that predicts the outcomes of rugby matches based on historical data and various weather conditions. It uses statistics from past matches and bet providers to forecast which team is more likely to win in a head-to-head match-up.
+
+===================================================================================================================================================
+
+Features:
+Home Page: Allows the user to select two teams and input various weather conditions such as precipitation, temperature, and wind range.
+Results Page: Displays the prediction results, including the winning chances for each team, average tries, predicted tries, and cote values.
+Tournament Simulation: Simulates a round-robin tournament between all the teams based on the input weather conditions and provides the tournament results.
+
+===================================================================================================================================================
+
+Data Sources:
+Three main CSV files are used for this application:
+
+TeamRugby.csv: Contains data specifically related to individual teams.
+BetClicScrapFix.csv: Contains betting data scrapped from the BetClic website.
+
+===================================================================================================================================================
+
+How to Run:
+Ensure you have Flask installed:
+bash
+Copy code
+pip install Flask
+Navigate to the directory where the code resides.
+Run the application:
+
+            
+            python app.py.py
+
+            
+Web Routes:
+/: Home page for selecting teams and inputting weather conditions.
+/results: Shows the predicted results based on the user's input.
+/Tournoi: Allows users to simulate a round-robin tournament.
+/ResultTournoi: Displays the tournament results.
+Functions Overview:
+calculate_year_weight(row_date): Calculates a weight based on how recent a match is.
+average_tries_scored(equipe, dataframe): Computes the weighted average tries a team scores.
+predict_tries(prob, avg_tries): Predicts the number of tries based on the probability of winning.
+proba_team(equipe, opponent, dataframe): Calculates the probability of a team winning against an opponent.
+proba_opponent(equipe, opponent, dataframe): Calculates the probability of an opponent winning against a team.
+calculate_percentage_chances(equipe1, equipe2, dataframe): Determines the percentage chances of each team winning.
+round_robin_simulation(dataframe): Simulates a round-robin tournament and returns the results.
+Error Handling:
+NoDataFoundException: Raised when no data is found for the given teams under the specified conditions.
+Known Issues:
+None currently. If you find any issues or bugs, please report them.
+
+Future Improvements:
+Integration with real-time data sources for up-to-date statistics.
+Enhancement in the prediction algorithm to factor in more parameters.
+User interface improvements for better user experience.
+Contributors:
+
+Adam Akherraz
+Thibaut Combaz-Deville
+Imene Tabet
+

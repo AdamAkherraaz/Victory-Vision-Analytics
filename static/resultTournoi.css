@@ -1,0 +1,77 @@
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.background-image {
+    /* Si vous avez une image spécifique que vous voulez utiliser comme arrière-plan, ajoutez le chemin ici */
+    /* background-image: url("chemin_vers_votre_image.jpg"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-return {
+    display: inline-block;
+    background-color: #d52d27; /* Rouge */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-return:hover {
+    background-color: #b02320;
+}
+
+.container2 {
+    max-width: 1000px;
+    margin: 1rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;  /* au cas où le contenu dépasse */
+    max-height: 80vh;  /* adapté pour laisser de l'espace pour le bouton et le footer */
+}
+
+.Titre {
+    text-align: center;
+    color: #0033A0; /* Bleu */
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    color: #0033A0;
+    margin-top: 2rem;
+    border-bottom: 2px solid #0033A0; /* Une ligne sous chaque titre d'équipe pour les séparer visuellement */
+    padding-bottom: 1rem;
+}
+
+footer {
+    background-color: #0033A0; /* Bleu */
+    padding: 1rem 0;
+    text-align: center;
+    position: static;
+}
+
+@media screen and (max-width: 768px) {
+    .container2 {
+        max-width: 90%;
+        padding: 1rem;
+    }
+}

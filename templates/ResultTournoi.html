@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='resultTournoi.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='IconWeb.png') }}" type="image/png">
+</head>
+<body class="background-image">
+    <main class="container2">
+        <h2 class="Titre">Résultats du simulateur</h2>
+        
+        <a href="/" class="btn-return">Retourner à l'accueil</a>
+        <div>
+            {% for team, data in results.items() %}
+            <h2>{{ team }}</h2>
+            <p>Points: {{ data["points"] }}</p>
+            <p>Probability of Winning: {{ "{:.2f}%".format(data["probability"] * 100) }}</p>
+
+            <p>Average Tries: {{ "{:.3}".format (data["avg_tries"]) }}</p>
+            <p>Cote: {{ "{:.4}".format (data["cote"]) }}</p>
+        {% endfor %}
+        
+        </div>
+       
+
+       
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>

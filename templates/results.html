@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='results.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='IconWeb.png') }}" type="image/png">
+</head>
+<body class="background-image">
+   
+    <main class="container2">
+        <h2 class="Titre">Résultats du simulateur</h2>
+        <div class="info">
+            <div class="info1">
+                <h3>Equipe 1 : {{ equipe1 }}</h3>
+                <p class="percentage">Pourcentage de victoires : {{ "{:.2f}".format(prob_team1 * 100) }}%</p>
+                <p class="percentage">Pourcentage de défaites : {{ "{:.2f}".format((1 - prob_team1) * 100) }}%</p>
+              
+                <p>Cote théorique : {{ "{:.2f}".format(cote_equipe1) }}</p>
+                <p>Moyenne des essais marqués : {{"{:.0f}".format(avg_tries_team2) }}</p>
+                <p>Essais prédits : {{ predicted_tries_team1 }}</p>
+            </div>
+            <div class="info2">
+                <h3>Equipe 2 : {{ equipe2 }}</h3>
+                <p class="percentage">Pourcentage de victoires : {{ "{:.2f}".format(prob_team2 * 100) }}%</p>
+                <p class="percentage">Pourcentage de défaites : {{ "{:.2f}".format((1 - prob_team2) * 100) }}%</p>
+              
+                <p>Cote théorique pour : {{ "{:.2f}".format(cote_equipe2) }}</p>
+                <p>Moyenne des essais marqués : {{"{:.0f}".format(avg_tries_team2) }}</p>
+                <p>Essais prédits : {{ predicted_tries_team2 }}</p>
+            </div>
+        </div>
+        <p>Gagnant : {{ predicted_winner }}</p>
+        ...
+<a href="/" class="btn-return">Retourner à l'accueil</a>
+...
+
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>
